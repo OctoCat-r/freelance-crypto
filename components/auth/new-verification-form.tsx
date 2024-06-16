@@ -26,8 +26,7 @@ const NewVerificationForm = () => {
 
     newVerification(token)
       .then((data) => {
-        setSuccess(data.success);
-        setError(data.error);
+        data.success ? setSuccess(data.success) : setError(data.error);
       })
       .catch(() => {
         setError("Something went wrong!");
@@ -36,7 +35,7 @@ const NewVerificationForm = () => {
 
   useEffect(() => {
     onSubmit();
-  }, [onSubmit]);
+  }, []);
 
   return (
     <CardWrapper

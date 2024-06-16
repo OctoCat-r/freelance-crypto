@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/form-error";
 import { FormSucess } from "@/components/form-sucess";
 import { register } from "@/actions/register";
+import { redirect } from "next/navigation";
 
 const RegisterForm = () => {
   const [error, setError] = useState<string | undefined>("");
@@ -43,8 +44,9 @@ const RegisterForm = () => {
 
     startTransition(() => {
       register(values).then((data) => {
-        setError(data.error);
-        setSucess(data.sucess);
+        setError(data?.error);
+        setSucess(data?.sucess);
+        // redirect("/login");
       });
     });
   };

@@ -13,8 +13,9 @@ export default {
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
     Google({
-      clientId: process.env.GOGGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+      clientId: process.env.G_CID,
+      // "978037063547-2prn84s17d81sugbjs6etsvj9g70arfq.apps.googleusercontent.com",
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     Credentials({
       async authorize(credentials) {
