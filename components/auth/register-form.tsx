@@ -4,6 +4,7 @@ import * as z from "zod";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+const { v4: uuidv4 } = require("uuid");
 
 import { RegisterSchema } from "@/schemas";
 
@@ -28,6 +29,9 @@ const RegisterForm = () => {
   const [error, setError] = useState<string | undefined>("");
   const [sucess, setSucess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
+  function generateKMATUniqueId() {
+    return `KMAT-${uuidv4().substring(0, 8)}`; // Generate KMAT- followed by 8 random characters
+  }
 
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
@@ -35,6 +39,7 @@ const RegisterForm = () => {
       email: "",
       password: "",
       name: "",
+      uniqueIdForUser: generateKMATUniqueId(),
     },
   });
 

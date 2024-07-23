@@ -34,7 +34,7 @@ Before you begin, ensure you have the following installed:
     GOOGLE_CLIENT_SECRET=your-google-client-secret
     GITHUB_CLIENT_ID=your-github-client-id
     GITHUB_CLIENT_SECRET=your-github-client-secret
-    NEXTAUTH_URL=http://localhost:3000
+    NEXTAUTH_URL=http://localhost:3001
     AUTH_SECRET=your-auth-secret-token
     RESEND_API_KEY=your-resend-api-key
 

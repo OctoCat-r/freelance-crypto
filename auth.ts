@@ -66,6 +66,8 @@ export const {
         session.user.name = token.name;
         session.user.email = token.email;
         session.user.isOAuth = token.isOAuth as boolean;
+        session.user.uniqueIdForUser = token?.uniqueIdForUser ?? "";
+        session.user.referredBy = token?.referredBy ?? "";
       }
 
       return session;
@@ -84,6 +86,8 @@ export const {
       token.email = existingUser.email;
       token.role = existingUser.role;
       token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
+      token.uniqueIdForUser = existingUser.uniqueIdForUser;
+      token.referredBy = existingUser.referredBy;
 
       return token;
     },

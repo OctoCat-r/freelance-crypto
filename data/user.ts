@@ -19,3 +19,13 @@ export const getUserById = async (id: string) => {
     return null;
   }
 };
+
+export const getAllUser = async () => {
+  try {
+    const users = await db.user.findMany();
+    // console.log(users);
+    return users || [];
+  } catch (errors) {
+    return null;
+  }
+};

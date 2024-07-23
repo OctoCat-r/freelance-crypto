@@ -6,7 +6,7 @@ import bcrypt from "bcryptjs";
 
 import { signIn } from "@/auth";
 import { LoginSchema } from "@/schemas";
-import { getUserByEmail } from "@/data/user";
+import { getAllUser, getUserByEmail } from "@/data/user";
 import { getTwoFactorTokenByEmail } from "@/data/two-factor-token";
 import { sendVerificationEmail, sendTwoFactorTokenEmail } from "@/lib/mail";
 import {
@@ -30,6 +30,7 @@ export const login = async (
   const { email, password, code } = validatedFields.data;
 
   const existingUser = await getUserByEmail(email);
+  
 
   if (!existingUser || !existingUser.email || !existingUser.password) {
     return { error: "Email does not exist!" };

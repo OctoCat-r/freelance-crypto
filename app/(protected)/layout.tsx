@@ -8,10 +8,10 @@ const ProtectedLayout = ({ children }: ProtectedLayoutProps) => {
   return (
     <div
       className="
-        h-full w-full flex flex-col items-center    
+        h-full w-full flex flex-col 
     "
     >
-      <Navbar />
+      {/* <Navbar /> */}
       {children}
     </div>
   );

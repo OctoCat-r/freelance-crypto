@@ -21,6 +21,9 @@ export const RegisterSchema = z.object({
   name: z.string().min(1, {
     message: "Name is required",
   }),
+  uniqueIdForUser: z.string().min(7, {
+    message: "User account is required",
+  }),
 });
 
 export const ResetSchema = z.object({
